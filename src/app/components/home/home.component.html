@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+
+            <h1>add User</h1>
+
+        </div>
+        <div class="col">
+            <a routerLink="/alluser" class="btn btn-sm btn-warning">Users List</a>
+        </div>
+    </div>
+    <form [formGroup]="addForm" (ngSubmit)="addUser()">
+        <div class="form-row">
+            <div class="form-group col-6">
+                <label for="firstname" class="form-label">Name :</label>
+                <input type="text" name="firstname" id="firstname" formControlName="name" class="form-control">
+
+            </div>
+
+
+            <div class="form-row" class="form-label">
+                <div class="form-group col-6">
+                    <label for="formFile">Image :</label>
+                    <input class="form-control" type="file" id="formFile" accept="image/*" formControlName="image"
+                        (change)="onSelectFile($event)">
+
+
+                </div>
+                <img [src]="imgURL" height="300" *ngIf="imgURL">
+                <br>
+
+                <div class="form-row">
+                    <div class="form-group col">
+                        <input type="submit" value="Add User" class="btn btn-info">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+
+</div>

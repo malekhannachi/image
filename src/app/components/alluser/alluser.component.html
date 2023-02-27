@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+
+            <h1>All User</h1>
+            <hr>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Image </th>
+                <th>Name</th>
+
+                <th>#</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of userList">
+
+                <td>
+                    <img [src]="item.image" height="150" *ngIf="item.image">
+                </td>
+                <td class="align-middle">{{item.name}}</td>
+
+                <td> <button class="btn btn-sm btn-danger" (click)="deleteUser(item)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
